@@ -1,11 +1,14 @@
-import React from 'react';
-// import GetMovieApi from './components/GetMovieApi';
+import React, {Fragment} from 'react';
 import Navibar from './components/Navibar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Cards from './components/Cards';
+
 
 function App() {
   return (
-    <Navibar />
+    <Fragment>
+      <Navibar />
+      <Cards/>
+    </Fragment>
   );
 }
 

@@ -1,29 +1,25 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getMovies } from '../redux/actions';
 
-export default class Navibar extends Component {
+class Navibar extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            keyword: 'однажды в... голливуде'
+            keyword: ''
         }
     }
 
     handleClickGetMovies = async (e) => {
         e.preventDefault();
-        const adressAPI =  `https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=${this.state.keyword}&page=1`;
-        const response = await fetch(adressAPI, {
-            headers: {
-                'X-API-KEY': 'bb9804ba-323d-4514-8262-7a02b5276b63'
-            }
-        });
-        const resultJson = await response.json();
-        console.log(resultJson.films);
-        return resultJson.films;
+        return this.props.getMovies(this.state.keyword);
     }
 
     handleChangeSearchValue = ({ target }) => {
-
+        this.setState({
+            keyword: target.value
+        })
     }
 
 
@@ -39,6 +35,7 @@ export default class Navibar extends Component {
                             placeholder="Название..."
                             aria-label="Search"
                             onChange={this.handleChangeSearchValue}
+                            value={this.state.keyword}
                         />
                         <button className="btn btn-outline-light" type="submit">Поиск</button>
                     </form>
@@ -47,3 +44,9 @@ export default class Navibar extends Component {
         );
     }
 }
+
+const mapDispatchToProps = {
+    getMovies
+};
+
+export default connect(null, mapDispatchToProps)(Navibar);

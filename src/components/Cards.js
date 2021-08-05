@@ -8,7 +8,15 @@ const Cards = ({ movies }) => {
         return <p className='text-center'>Фильмов пока нет</p>
     }
 
-    return <Card {...movies[0]} />
+    // return <Card {...movies[0]} />
+
+    return (
+        <div className='container bg-dark'>
+            <div className='row'>
+                {movies.map(movie => <Card {...movie} />)}
+            </div>
+        </div>
+    );
 }
 
 

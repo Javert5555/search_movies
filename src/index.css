@@ -8,12 +8,24 @@ body {
   border-radius: .5rem;
 }
 
-.card_width {
-  width: 18rem;
+.movie-card {
+  margin: 0 auto 1rem;
+  max-width: 18rem;
+  /* min-height: 30rem; */
+  
+}
+
+.card-description {
+  max-height: 10rem;
 }
 
 .card-img {
   margin: 1rem auto;
   max-width: 10rem;
   height: auto;
+  max-height: 15rem;
+}
+
+.card-btn {
+  margin: 0 auto;
 }

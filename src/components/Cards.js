@@ -17,7 +17,7 @@ const Cards = ({ movies, loading, alert }) => {
 
     return (
         <div className='container bg-dark mt-3 mb-3'>
-            <div className='row d-flex justify-content-start'>
+            <div className='row'>
                 {movies.map(movie => <Card key={movie.filmId} {...movie} />)}
             </div>
         </div>

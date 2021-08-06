@@ -1,19 +1,24 @@
 import React from 'react';
 import '../index.css';
 import { connect } from 'react-redux';
-import Card from './Card';
+import { Card } from './Card';
+import { Loader } from './Loader';
+import { Alert } from './Alert';
 
-const Cards = ({ movies }) => {
-    if (!movies.length) {
+const Cards = ({ movies, loading, alert }) => {
+
+    if (loading) {
+        return <Loader />
+    } else if (!movies.length && !alert) {
         return <p className='text-center'>Фильмов пока нет</p>
+    } else if (alert) {
+        return <Alert text={alert} />
     }
 
-    // return <Card {...movies[0]} />
-
     return (
-        <div className='container bg-dark'>
-            <div className='row'>
-                {movies.map(movie => <Card {...movie} />)}
+        <div className='container bg-dark mt-3 mb-3'>
+            <div className='row d-flex justify-content-start'>
+                {movies.map(movie => <Card key={movie.filmId} {...movie} />)}
             </div>
         </div>
     );
@@ -23,7 +28,9 @@ const Cards = ({ movies }) => {
 
 const mapStateToProps = state => {
     return {
-    movies: state.movies.movies
+    movies: state.movies.movies,
+    loading: state.app.loading,
+    alert: state.app.alert
 }};
 
 export default connect(mapStateToProps, null)(Cards);

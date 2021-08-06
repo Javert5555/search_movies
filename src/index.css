@@ -4,15 +4,12 @@ body {
 
 .container {
   padding: 1rem;
-  margin-top: 1rem;
   border-radius: .5rem;
 }
 
 .movie-card {
   margin: 0 auto 1rem;
-  max-width: 18rem;
-  /* min-height: 30rem; */
-  
+  max-width: 18rem;  
 }
 
 .card-description {

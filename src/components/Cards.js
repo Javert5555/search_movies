@@ -1,9 +1,9 @@
 import React from 'react';
 import '../index.css';
 import { connect } from 'react-redux';
-import { Card } from './Card';
 import { Loader } from './Loader';
 import { Alert } from './Alert';
+import { RowCards } from './RowCards';
 
 const Cards = ({ movies, loading, alert }) => {
 
@@ -15,11 +15,18 @@ const Cards = ({ movies, loading, alert }) => {
         return <Alert text={alert} />
     }
 
+    let maxNumOfColsInRow = 4;
+    let rangeInListOfMovies = 4;
+    let listOfMovies = []
+
+    for(let i = 0; i < movies.length / 4; i++) {
+        listOfMovies.push(movies.slice(maxNumOfColsInRow - rangeInListOfMovies, maxNumOfColsInRow))
+        maxNumOfColsInRow += rangeInListOfMovies
+    }
+
     return (
         <div className='container bg-dark mt-3 mb-3'>
-            <div className='row'>
-                {movies.map(movie => <Card key={movie.filmId} {...movie} />)}
-            </div>
+                {listOfMovies.map((fourMovies, index) => <RowCards {...fourMovies} key={(index + Math.random()).toString()} />)}
         </div>
     );
 }

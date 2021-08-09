@@ -27,7 +27,7 @@ class Navibar extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <a className="navbar-brand me-auto mb-2 mb-lg-0" href="#">Поиск кино</a>
+                    <a className="navbar-brand me-auto mb-2 mb-lg-0" href="/#">Поиск кино</a>
                     <form className="d-flex" onSubmit={this.handleClickGetMovies}>
                         <input
                             className="form-control me-2"

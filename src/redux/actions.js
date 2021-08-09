@@ -47,7 +47,7 @@ export function getMovies(keyword) {
             });
             const resultJson = await response.json();
             resultJson.films.length === 0 ?
-            dispatch(showAlert('Нет фильмов с указанным названием')) :
+            dispatch(showAlert(`Фильм с названием ${keyword} не найден`)) :
             dispatch({type: GET_MOVIES, payload: resultJson});
             dispatch(hideLoader());
         } catch (e) {

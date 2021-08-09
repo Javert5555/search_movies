@@ -1,6 +1,5 @@
-.container {
-  padding: 1rem;
-  border-radius: .5rem;
+section, header {
+  padding-bottom: 1rem;
 }
 
 .card-description {
@@ -9,7 +8,6 @@
 
 .card-img {
   margin: 1rem auto;
-  width: 10rem;
+  width: 15rem;
   height: auto;
-  max-height: 15rem;
 }

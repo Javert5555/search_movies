@@ -8,26 +8,28 @@ import { RowCards } from './RowCards';
 const Cards = ({ movies, loading, alert }) => {
 
     if (loading) {
-        return <Loader />
+        return <Loader />;
     } else if (!movies.length && !alert) {
-        return <p className='text-center'>Фильмов пока нет</p>
+        return <p className='text-center'>Фильмов пока нет</p>;
     } else if (alert) {
-        return <Alert text={alert} />
+        return <Alert text={alert} />;
     }
 
-    let maxNumOfColsInRow = 4;
-    let rangeInListOfMovies = 4;
-    let listOfMovies = []
+    let maxQuantityOfColsInRow = 4,
+        rangeInListOfMovies = 4,
+        listOfMovies = [];  
 
     for(let i = 0; i < movies.length / 4; i++) {
-        listOfMovies.push(movies.slice(maxNumOfColsInRow - rangeInListOfMovies, maxNumOfColsInRow))
-        maxNumOfColsInRow += rangeInListOfMovies
+        listOfMovies.push(movies.slice(maxQuantityOfColsInRow - rangeInListOfMovies, maxQuantityOfColsInRow));
+        maxQuantityOfColsInRow += rangeInListOfMovies;
     }
 
     return (
-        <div className='container bg-dark mt-3 mb-3'>
-                {listOfMovies.map((fourMovies, index) => <RowCards {...fourMovies} key={(index + Math.random()).toString()} />)}
-        </div>
+        <section className='section'>
+            <div className='container bg-dark rounded pt-3'>
+                    {listOfMovies.map((fourMovies, index) => <RowCards {...fourMovies} key={(index + Math.random()).toString()} />)}
+            </div>
+        </section>
     );
 }
 

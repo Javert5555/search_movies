@@ -9,12 +9,12 @@ export const Card = movie => {
         id = movie.filmId,
         description = movie.description ?
         movie.description
-        : 'Описание: ...',
-        genres = movie.genres.map(({ genre = '' }) => genre)
+        : '...',
+        genres = movie.genres.map(({ genre = '' }) => genre);
 
     return (
         <div className='col-sm-12 col-md-6 col-xl-3 d-flex align-items-stretch'>
-            <div className="card mb-4 flex-grow-1">
+            <div className="card mb-3 flex-grow-1">
                 <img src={poster} className="card-img-top card-img" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>

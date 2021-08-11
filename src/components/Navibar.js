@@ -25,7 +25,7 @@ class Navibar extends Component {
 
     render() {
         return (
-            <header>
+            <header id="header">
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div className="container-fluid">
                         <a className="navbar-brand me-auto mb-2 mb-lg-0" href="/#">Поиск кино</a>

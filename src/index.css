@@ -1,5 +1,9 @@
-section, header {
-  padding-bottom: 1rem;
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+section {
+  padding: 1rem;
 }
 
 .card-description {
@@ -10,4 +14,24 @@ section, header {
   margin: 1rem auto;
   width: 15rem;
   height: auto;
+}
+
+.anchor {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #646668;
+  border-radius: 50%;
+  color: #ffffff;
+  border: 2px solid #646668;
+}
+
+a.anchor:hover {
+  color: #646668;
+  background-color: #ffffff;
 }

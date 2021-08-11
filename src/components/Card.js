@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import '../index.css';
 
 export const Card = movie => {
@@ -19,7 +21,7 @@ export const Card = movie => {
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <div className="mb-2">
-                        <i className="fas fa-star"></i>
+                        <FontAwesomeIcon icon={faStar} />
                         {` ${rating}`}
                     </div>
                     <div className="mb-2 text-truncate">

@@ -10,7 +10,7 @@ const Cards = ({ movies, loading, alert }) => {
     if (loading) {
         return <Loader />;
     } else if (!movies.length && !alert) {
-        return <p className='text-center'>Фильмов пока нет</p>;
+        return <p className='text-center mt-5'>Фильмов пока нет</p>;
     } else if (alert) {
         return <Alert text={alert} />;
     }
@@ -25,7 +25,7 @@ const Cards = ({ movies, loading, alert }) => {
     }
 
     return (
-        <section className='section'>
+        <section>
             <div className='container bg-dark rounded pt-3'>
                     {listOfMovies.map((fourMovies, index) => <RowCards {...fourMovies} key={(index + Math.random()).toString()} />)}
             </div>

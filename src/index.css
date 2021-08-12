@@ -4,17 +4,20 @@ body {
 
 section {
   padding: 1rem;
+  background-color: rgb(151, 151, 151);
 }
 
-.card-description {
+.card_description {
   max-height: 10rem;
 }
 
-.card-img {
+.card_img {
   margin: 1rem auto;
-  width: 15rem;
-  height: auto;
+  height: 20rem;
+  width: auto;
 }
+
+/* Anchor */
 
 .anchor {
   position: fixed;
@@ -34,4 +37,20 @@ section {
 a.anchor:hover {
   color: #646668;
   background-color: #ffffff;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar-track {
+  background-color: rgb(151, 151, 151);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #303030;
+  border-radius: 10px;
 }

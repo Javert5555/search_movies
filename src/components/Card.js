@@ -17,7 +17,7 @@ export const Card = movie => {
     return (
         <div className='col-sm-12 col-md-6 col-xl-3 d-flex align-items-stretch'>
             <div className="card mb-3 flex-grow-1">
-                <img src={poster} className="card-img-top card-img" alt="..." />
+                <img src={poster} className="card-img-top card_img" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <div className="mb-2">
@@ -27,7 +27,7 @@ export const Card = movie => {
                     <div className="mb-2 text-truncate">
                         {`Жанр: ${genres}`}
                     </div>
-                    <p className="card-text overflow-auto card-description">{description}</p>
+                    <p className="card-text overflow-auto card_description">{description}</p>
                 </div>
                 <div className='d-flex align-items-end justify-content-center pb-2'>
                     <a

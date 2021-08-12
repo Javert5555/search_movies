@@ -10,7 +10,7 @@ const Cards = ({ movies, loading, alert }) => {
     if (loading) {
         return <Loader />;
     } else if (!movies.length && !alert) {
-        return <p className='text-center mt-5'>Фильмов пока нет</p>;
+        return <p className='text-center mt-3'>Фильмов пока нет</p>;
     } else if (alert) {
         return <Alert text={alert} />;
     }

@@ -1,19 +1,19 @@
 import { GET_MOVIES, SHOW_LOADER, HIDE_LOADER, SHOW_ALERT, HIDE_ALERT } from "./types";
 
 
-export function showLoader() {
+export const showLoader = () => {
     return {
         type: SHOW_LOADER
     }
 }
 
-export function hideLoader() {
+export const hideLoader = () => {
     return {
         type: HIDE_LOADER
     }
 }
 
-export function showAlert(text) {
+export const showAlert = text => {
     return dispatch => {
         dispatch({
             type: SHOW_ALERT,
@@ -26,7 +26,7 @@ export function showAlert(text) {
     }
 }
 
-export function hideAlert() {
+export const hideAlert = () => {
     return {
         type: HIDE_ALERT
     }
@@ -35,7 +35,7 @@ export function hideAlert() {
 
 // before sending the request, we show the loader (showLoader), after sending the request, we stop show the loader (hideLoader)
 // this function executes a request to the kinopoisk api
-export function getMovies(keyword) {
+export const getMovies = keyword => {
     return async dispatch => {
         try {
             dispatch(showLoader());

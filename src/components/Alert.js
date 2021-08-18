@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Alert = ({ text }) => (
     <div className='container mt-3'>
@@ -7,3 +8,7 @@ export const Alert = ({ text }) => (
         </div>
     </div>
 );
+
+Alert.propTypes = {
+    text: PropTypes.string.isRequired,
+};

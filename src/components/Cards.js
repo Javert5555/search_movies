@@ -1,6 +1,7 @@
 import React from 'react';
 import '../index.css';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Loader } from './Loader';
 import { Alert } from './Alert';
 import { RowCards } from './RowCards';
@@ -32,6 +33,15 @@ const Cards = ({ movies, loading, alert }) => {
         </section>
     );
 }
+
+Cards.propTypes = {
+    movies: PropTypes.array.isRequired,
+    loading: PropTypes.bool,
+    alert: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object, // null or any string
+    ]),
+};
 
 
 

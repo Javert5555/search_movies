@@ -52,6 +52,7 @@ export const getMovies = keyword => {
             dispatch(hideLoader());
         } catch (e) {
             console.error(e);
+            dispatch(showAlert('Ошибка соединения'))
             dispatch(hideLoader());
         }
     }

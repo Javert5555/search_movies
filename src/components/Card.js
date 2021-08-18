@@ -1,37 +1,36 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 import '../index.css';
 
-export const Card = movie => {
+export const Card = ({posterUrlPreview, nameRu, rating, filmId, description, genres }) => {
 
-    const poster = movie.posterUrlPreview,
-        name = movie.nameRu,
-        rating = movie.rating,
-        id = movie.filmId,
-        description = movie.description ?
-        movie.description
-        : '...',
-        genres = movie.genres.map(({ genre = '' }) => genre);
+    const moviePoster = posterUrlPreview,
+        movieName = nameRu,
+        movieRating = rating,
+        movieId = filmId,
+        movieDescription = description,
+        movieGenres = genres.map(({ genre = '' }) => genre);
 
     return (
         <div className='col-sm-12 col-md-6 col-xl-3 d-flex align-items-stretch'>
             <div className="card mb-3 flex-grow-1">
-                <img src={poster} className="card-img-top card_img" alt="..." />
+                <img src={moviePoster} className="card-img-top card_img" alt="..." />
                 <div className="card-body">
-                    <h5 className="card-title">{name}</h5>
+                    <h5 className="card-title">{movieName}</h5>
                     <div className="mb-2">
                         <FontAwesomeIcon icon={faStar} />
-                        {` ${rating}`}
+                        {` ${movieRating}`}
                     </div>
                     <div className="mb-2 text-truncate">
-                        {`Жанр: ${genres}`}
+                        {`Жанр: ${movieGenres}`}
                     </div>
-                    <p className="card-text overflow-auto card_description">{description}</p>
+                    <p className="card-text overflow-auto card_description">{movieDescription}</p>
                 </div>
                 <div className='d-flex align-items-end justify-content-center pb-2'>
                     <a
-                        href={`https://www.kinopoisk.ru/film/${id}/`}
+                        href={`https://www.kinopoisk.ru/film/${movieId}/`}
                         rel="noreferrer"
                         target='_blank'
                         className="btn btn-dark"
@@ -42,4 +41,15 @@ export const Card = movie => {
     );
 }
 
+Card.propTypes = {
+    posterUrlPreview: PropTypes.string.isRequired,
+    nameRu: PropTypes.string.isRequired,
+    rating: PropTypes.string.isRequired,
+    filmId: PropTypes.number.isRequired,
+    description: PropTypes.string,
+    genres: PropTypes.array,
+};
 
+Card.defaultProps = {
+    description: '...',
+};

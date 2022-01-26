@@ -28,7 +28,8 @@ class Navibar extends Component {
             <header id="header">
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div className="container-fluid">
-                        <a className="navbar-brand me-auto mb-2 mb-lg-0" href="/#">Поиск кино</a>
+                        <a className="navbar-brand me-auto mb-2 mb-lg-0" href="/#" target="_blank" rel="noreferrer">Поиск кино</a>
+                        <a className="nav-link link-info mb-lg-0" href="https://github.com/Javert5555/search_movies" target="_blank" rel="noreferrer">GitHub</a>
                         <form className="d-flex" onSubmit={this.handleClickGetMovies}>
                             <input
                                 className="form-control me-2"
